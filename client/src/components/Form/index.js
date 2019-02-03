@@ -25,3 +25,11 @@ export function FormBtn(props) {
     </button>
   );
 }
+
+export function FormBtnInline(props) {
+  return (
+    <button {...props} className="btn btn-success ml-2">
+      {props.children}
+    </button>
+  );
+}
