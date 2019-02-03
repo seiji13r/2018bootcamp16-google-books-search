@@ -43,7 +43,7 @@ class Saved extends Component {
                   book["image"]
                 ) ? (
                   <BookComponent
-                    item={item}
+                    key={item}
                     id_googlebooks={book["id"]}
                     title={book["title"]}
                     authors={book["authors"]}

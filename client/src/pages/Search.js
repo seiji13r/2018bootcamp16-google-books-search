@@ -30,7 +30,6 @@ class Search extends Component {
           books: resBooks.data.items
         })
       }).catch(error => {
-        console.log('signup error: ')
         console.log(error)
       })
 
@@ -50,7 +49,7 @@ class Search extends Component {
     
     API.getBookIdGoogle(book["id"])
       .then(res => {
-        console.log(res)
+        // console.log(res)
         if (!res.data){
           API.saveBook(dbBook)
             .then(res => console.log(dbBook))
@@ -99,7 +98,7 @@ class Search extends Component {
                   book["volumeInfo"]["imageLinks"]
                 ) ? (
                   <BookComponent
-                    item={item}
+                    key={item}
                     id_googlebooks={book["id"]}
                     title={book["volumeInfo"]["title"]}
                     authors={book["volumeInfo"]["authors"].join(", ")}
